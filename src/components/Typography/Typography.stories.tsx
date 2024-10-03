@@ -27,6 +27,13 @@ export const H1: Story = {
   },
 };
 
+export const H3: Story = {
+  args: {
+    variant: 'h3',
+    children: message,
+  },
+};
+
 export const Button: Story = {
   args: {
     variant: 'button',
