@@ -1,4 +1,6 @@
 export * from './PreviousButton';
 export * from './NextButton';
 export * from './Typography';
-export * from './Chapter';
+export * from './ChapterList';
+export * from './ArticleLayout';
+export * from './SideBar';
