@@ -5,7 +5,7 @@ import { Chapter } from '.';
 import { articleAbstracts } from '@/demos';
 
 const meta = {
-  title: 'Chapter',
+  title: 'ChapterList/Chapter',
   component: Chapter,
   tags: ['autodocs'],
 } satisfies Meta<typeof Chapter>;
@@ -16,8 +16,10 @@ type Story = StoryObj<typeof meta>;
 
 export const Sample: Story = {
   args: {
-    label: '記事一覧',
-    articles: articleAbstracts,
+    chapter: {
+      title: '記事一覧',
+      articles: articleAbstracts,
+    },
   },
   render: (args) => (
     <div className="w-40 border">

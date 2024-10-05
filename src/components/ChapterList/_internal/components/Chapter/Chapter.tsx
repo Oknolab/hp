@@ -1,16 +1,15 @@
 import { Typography } from '@/components';
-import { ArticleAbstract } from '@/types';
+import { ArticleAbstract, Chapter as ChapterType } from '@/types';
 
 type ChapterProps = {
-  label: string;
-  articles: ArticleAbstract[];
+  chapter: ChapterType;
 };
-export const Chapter = ({ label, articles }: ChapterProps) => {
+export const Chapter = ({ chapter }: ChapterProps) => {
   return (
-    <nav aria-label="目次" className="flex flex-col border border-black-200 p-2 gap-1">
-      <Typography variant="h3">{label}</Typography>
+    <nav aria-label="目次" className="border-black-200 flex flex-col gap-1 border p-2">
+      <Typography variant="h3">{chapter.title}</Typography>
       <ul className="mx-2 flex flex-col gap-1">
-        {articles.map((article) => (
+        {chapter.articles.map((article) => (
           <ChapterItem key={article.articleId} article={article} />
         ))}
       </ul>
@@ -23,8 +22,8 @@ type ChapterItemProps = {
 };
 const ChapterItem = ({ article }: ChapterItemProps) => {
   return (
-    <li className="hover:bg-gray-200 px-1">
-      <a href={article.url} className="block w-full">
+    <li className="px-1 hover:bg-gray-200">
+      <a className="block w-full" href={article.url}>
         <Typography variant="button">{article.title}</Typography>
       </a>
     </li>
