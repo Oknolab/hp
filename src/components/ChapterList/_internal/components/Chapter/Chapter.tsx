@@ -1,5 +1,6 @@
 import { Typography } from '@/components';
 import { ArticleAbstract, Chapter as ChapterType } from '@/types';
+import { paths } from '@/utils';
 
 type ChapterProps = {
   chapter: ChapterType;
@@ -21,9 +22,11 @@ type ChapterItemProps = {
   article: ArticleAbstract;
 };
 const ChapterItem = ({ article }: ChapterItemProps) => {
+  const url = paths.article(article.articleId);
+
   return (
     <li className="px-1 hover:bg-gray-200">
-      <a className="block w-full" href={article.url}>
+      <a className="block w-full" href={url}>
         <Typography variant="button">{article.title}</Typography>
       </a>
     </li>
