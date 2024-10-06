@@ -1,12 +1,7 @@
-import { Abstract } from '@/articles/intro';
-import { PageLayout } from '@/components';
+import { RouterProvider } from '@/contexts/router';
 
 function App() {
-  return (
-    <PageLayout>
-      <Abstract />
-    </PageLayout>
-  );
+  return <RouterProvider />;
 }
 
 export default App;
