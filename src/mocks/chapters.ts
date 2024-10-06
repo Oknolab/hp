@@ -1,6 +1,6 @@
 import { Chapter } from '@/types';
 
-export const mockChapters: Chapter[] = [
+export const chapters: Chapter[] = [
   {
     title: '研究室紹介',
     articles: [

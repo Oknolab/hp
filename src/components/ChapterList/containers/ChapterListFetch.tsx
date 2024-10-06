@@ -1,6 +1,7 @@
 import { ChapterList } from '..';
-import { mockChapters } from '../_internal/';
+
+import { chapters } from '@/mocks';
 
 export const ChapterListFetch = () => {
-  return <ChapterList chapters={mockChapters} />;
+  return <ChapterList chapters={chapters} />;
 };
