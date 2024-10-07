@@ -25,7 +25,7 @@ export const chapters: Chapter[] = [
         title: '自主ゼミはどんな感じ？',
       },
       {
-        articleId: 'intro-activity',
+        articleId: 'intro-activities',
         title: 'その他の活動もある感じ？',
       },
     ],

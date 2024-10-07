@@ -1,9 +1,9 @@
-import { ArticleLayout } from '@/components';
+import { ArticleLayout, Typography } from '@/components';
 
 export const Abstract = () => {
   return (
     <ArticleLayout title="概要">
-      <p>Abstract text</p>
+      <Typography>ざっくりいうと、のんびりした研究室です。</Typography>
     </ArticleLayout>
   );
 };
