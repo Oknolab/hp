@@ -2,6 +2,7 @@ import { createBrowserRouter, Outlet, RouterProvider as RP } from 'react-router-
 
 import { Abstract, Activities, Boss, Members, SelfSeminar, Seminar } from '@/articles/intro';
 import { PageLayout } from '@/components';
+import { NotFound } from '@/pages';
 import { paths } from '@/utils';
 
 const RootLayout = () => {
@@ -43,6 +44,14 @@ const router = createBrowserRouter([
       {
         path: paths.article('intro-activities'),
         element: <Activities />,
+      },
+    ],
+  },
+  {
+    children: [
+      {
+        path: '*',
+        element: <NotFound />,
       },
     ],
   },
