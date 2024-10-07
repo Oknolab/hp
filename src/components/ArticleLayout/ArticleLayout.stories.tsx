@@ -16,9 +16,9 @@ type Story = StoryObj<typeof meta>;
 
 export const Sample: Story = {
   args: {
+    title: 'Sample Article',
     children: (
       <>
-        <Typography variant="h1">Sample Article</Typography>
         <Typography>
           This is a sample article. This is a sample article. This is a sample article. This is a
         </Typography>

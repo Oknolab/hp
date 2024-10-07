@@ -1,4 +1,4 @@
-import { SideBar, ArticleLayout } from '@/components';
+import { SideBar } from '@/components';
 
 type PageLayoutProps = {
   children: React.ReactNode;
@@ -9,7 +9,7 @@ export const PageLayout = ({ children }: PageLayoutProps) => {
       {/* TODO: tailwind.configで設定したい */}
       <div className="flex w-full max-w-[1080px] justify-center gap-4 border p-4">
         <SideBar />
-        <ArticleLayout className="grow">{children}</ArticleLayout>
+        <div className="grow">{children}</div>
       </div>
     </div>
   );

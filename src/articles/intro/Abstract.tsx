@@ -1,10 +1,9 @@
-import { Typography } from '@/components';
+import { ArticleLayout } from '@/components';
 
 export const Abstract = () => {
   return (
-    <>
-      <Typography variant="h1">概要</Typography>
+    <ArticleLayout title="概要">
       <p>Abstract text</p>
-    </>
+    </ArticleLayout>
   );
 };
