@@ -7,7 +7,7 @@ type ChapterProps = {
 };
 export const Chapter = ({ chapter }: ChapterProps) => {
   return (
-    <nav aria-label="目次" className="border-black-200 flex flex-col gap-1 border p-2">
+    <nav aria-label="目次" className="flex flex-col gap-1 border border-gray-200 p-2">
       <Typography variant="h3">{chapter.title}</Typography>
       <ul className="mx-2 flex flex-col gap-1">
         {chapter.articles.map((article) => (

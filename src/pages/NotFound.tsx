@@ -1,4 +1,6 @@
 import { Typography } from '@/components';
+import { LinkButton } from '@/components';
+import { paths } from '@/utils';
 
 export const NotFound = () => {
   return (
@@ -6,6 +8,7 @@ export const NotFound = () => {
       <img alt="画像も見つかりませんでしたorz" className="w-28 rounded-full" src="/not-found.png" />
       <Typography variant="h1">404 Not Found</Typography>
       <Typography>ページが見つかりませんでした。</Typography>
+      <LinkButton href={paths.top}>トップページへ</LinkButton>
     </div>
   );
 };
