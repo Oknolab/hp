@@ -9,12 +9,16 @@ type CategoryListProps = {
   categories: Category[];
   activeCategory: Category | null;
   onClickCategory: (categoryPos: number) => void;
+  onMouseEnterCategory: (categoryPos: number) => void;
+  onMouseLeaveCategory: () => void;
 };
 
 export const CategoryList = ({
   categories,
   activeCategory,
   onClickCategory,
+  onMouseEnterCategory,
+  onMouseLeaveCategory,
 }: CategoryListProps) => {
   const className = 'flex gap-1';
 
@@ -30,6 +34,10 @@ export const CategoryList = ({
             onClick={() => {
               onClickCategory(i);
             }}
+            onMouseEnter={() => {
+              onMouseEnterCategory(i);
+            }}
+            onMouseLeave={onMouseLeaveCategory}
           />
         );
       })}
@@ -41,15 +49,28 @@ type CategoryListItemProps = {
   category: Category;
   isActive: boolean;
   onClick: () => void;
+  onMouseEnter: () => void;
+  onMouseLeave: () => void;
 };
-const CategoryListItem = ({ category, isActive, onClick }: CategoryListItemProps) => {
+const CategoryListItem = ({
+  category,
+  isActive,
+  onClick,
+  onMouseEnter,
+  onMouseLeave,
+}: CategoryListItemProps) => {
   const className = clsx('border p-1', {
     'bg-blue-300': isActive,
   });
   const to = paths.article(category.articles[0].articleId);
 
   return (
-    <li className={className} onClick={onClick}>
+    <li
+      className={className}
+      onClick={onClick}
+      onMouseEnter={onMouseEnter}
+      onMouseLeave={onMouseLeave}
+    >
       <Link to={to}>
         <Typography>{category.title}</Typography>
       </Link>
