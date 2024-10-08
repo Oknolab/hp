@@ -1,14 +1,14 @@
 import type { Meta, StoryObj } from '@storybook/react';
 
-import { ChapterList } from '.';
+import { _ChapterList } from '.';
 
 import { chapters } from '@/demos';
 
 const meta = {
-  title: 'ChapterList/ChapterList',
-  component: ChapterList,
+  title: '_ChapterList/_ChapterList',
+  component: _ChapterList,
   tags: ['autodocs'],
-} satisfies Meta<typeof ChapterList>;
+} satisfies Meta<typeof _ChapterList>;
 
 export default meta;
 

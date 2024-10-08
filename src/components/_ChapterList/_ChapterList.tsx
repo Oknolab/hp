@@ -5,7 +5,7 @@ import { Chapter as ChapterType } from '@/types';
 type ChapterListProps = {
   chapters: ChapterType[];
 };
-export const ChapterList = ({ chapters }: ChapterListProps) => {
+export const _ChapterList = ({ chapters }: ChapterListProps) => {
   return (
     <ul className="flex flex-col gap-1 border">
       {chapters.map((chapter) => (
