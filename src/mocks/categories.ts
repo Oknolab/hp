@@ -10,23 +10,23 @@ export const categories: Category[] = [
       },
       {
         articleId: 'intro-boss',
-        title: '先生はどんなひと？',
+        title: '教員',
       },
       {
         articleId: 'intro-members',
-        title: 'メンバーはどんなひと？',
+        title: 'メンバー',
       },
       {
         articleId: 'intro-seminar',
-        title: 'ゼミはどんな感じ？',
+        title: 'ゼミ',
       },
       {
         articleId: 'intro-self_seminar',
-        title: '自主ゼミはどんな感じ？',
+        title: '自主ゼミ',
       },
       {
         articleId: 'intro-activities',
-        title: 'その他の活動もある感じ？',
+        title: 'その他の活動',
       },
     ],
   },

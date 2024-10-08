@@ -5,7 +5,7 @@ import { CategoryList } from '.';
 import { categories } from '@/mocks';
 
 const meta = {
-  title: 'CategoryList',
+  title: 'ArticleNav/CategoryList',
   component: CategoryList,
   tags: ['autodocs'],
 } satisfies Meta<typeof CategoryList>;
