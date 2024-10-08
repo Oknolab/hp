@@ -9,7 +9,7 @@ type CategoryListProps = {
 };
 
 export const CategoryList = ({ categories }: CategoryListProps) => {
-  const className = 'flex gap-1 border';
+  const className = 'flex gap-1';
 
   return (
     <ul className={className}>
@@ -24,7 +24,7 @@ type CategoryListItemProps = {
   category: Category;
 };
 const CategoryListItem = ({ category }: CategoryListItemProps) => {
-  const className = 'p-1';
+  const className = 'p-1 border';
   const to = paths.article(category.articles[0].articleId);
 
   return (

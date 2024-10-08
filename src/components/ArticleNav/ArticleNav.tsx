@@ -1,5 +1,15 @@
-export const ArticleNav = () => {
-  const className = 'flex gap-1 border';
+import { useArticleNav, ArticleList, CategoryList } from './_internal';
 
-  return <div>aaa</div>;
+export const ArticleNav = () => {
+  const { categories, activeCategory } = useArticleNav();
+  const className = 'flex flex-col';
+
+  const displayArticleList = activeCategory !== null;
+
+  return (
+    <nav className={className}>
+      <CategoryList categories={categories} />
+      {displayArticleList && <ArticleList articles={activeCategory.articles} />}
+    </nav>
+  );
 };
