@@ -1,4 +1,4 @@
-import { useEffect } from 'react';
+import { memo, useEffect } from 'react';
 import { Link } from 'react-router-dom';
 
 import { Typography } from '@/components';
@@ -12,6 +12,8 @@ type ChapterProps = {
 export const Chapter = ({ chapter }: ChapterProps) => {
   const { currentArticle } = useChapter();
 
+  console.log(`render Chapter: ${chapter.title}`);
+
   useEffect(() => {
     console.log('currentArticle:', currentArticle.title);
   }, [currentArticle]);
@@ -21,7 +23,7 @@ export const Chapter = ({ chapter }: ChapterProps) => {
       <Typography variant="h3">{chapter.title}</Typography>
       <ul className="mx-2 flex flex-col gap-1">
         {chapter.articles.map((article) => (
-          <ChapterItem key={article.articleId} article={article} />
+          <MemoizedChapterItem key={article.articleId} article={article} />
         ))}
       </ul>
     </nav>
@@ -34,6 +36,8 @@ type ChapterItemProps = {
 const ChapterItem = ({ article }: ChapterItemProps) => {
   const path = paths.article(article.articleId);
 
+  console.log(`render ChapterItem: ${article.title}`);
+
   return (
     <li className="px-1 hover:bg-gray-200">
       <Link className="block w-full" to={path}>
@@ -42,3 +46,6 @@ const ChapterItem = ({ article }: ChapterItemProps) => {
     </li>
   );
 };
+
+// TODO: もっと良い書き方はないのか？
+const MemoizedChapterItem = memo(ChapterItem);
