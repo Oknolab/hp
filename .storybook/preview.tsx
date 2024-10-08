@@ -3,7 +3,7 @@ import React from 'react';
 import '../src/index.css';
 import { MemoryRouter } from 'react-router-dom';
 
-import { ChapterProvider } from '../src/contexts/chapter';
+// import { ChapterProvider } from '../src/contexts/chapter';
 
 const preview: Preview = {
   parameters: {
@@ -17,9 +17,9 @@ const preview: Preview = {
   decorators: [
     (Story) => (
       <MemoryRouter>
-        <ChapterProvider>
-          <Story />
-        </ChapterProvider>
+        {/* <ChapterProvider> */}
+        <Story />
+        {/* </ChapterProvider> */}
       </MemoryRouter>
     ),
   ],

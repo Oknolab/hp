@@ -5,7 +5,7 @@ import { Chapter } from '.';
 import { articleAbstracts } from '@/demos';
 
 const meta = {
-  title: 'ChapterList/Chapter',
+  title: 'OldChapterList/Chapter',
   component: Chapter,
   tags: ['autodocs'],
 } satisfies Meta<typeof Chapter>;

@@ -1,1 +1,1 @@
-export * from './chapters';
+export * from './categories';

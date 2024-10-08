@@ -1,7 +1,7 @@
 import { createContext, useContext, useEffect, useState } from 'react';
 import { useLocation } from 'react-router-dom';
 
-import { chapters } from '../mocks/chapters';
+// import { chapters } from '../mocks/chapters';
 
 import { ArticleAbstract } from '@/types';
 import { articleIdFromPathname } from '@/utils/articleIdFromPathname';

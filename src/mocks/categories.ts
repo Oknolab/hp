@@ -1,8 +1,8 @@
-import { Chapter } from '@/types';
+import { Category } from '@/types';
 
-export const chapters: Chapter[] = [
+export const categories: Category[] = [
   {
-    title: '研究室紹介',
+    title: '研究室',
     articles: [
       {
         articleId: 'intro-abstract',
@@ -27,6 +27,31 @@ export const chapters: Chapter[] = [
       {
         articleId: 'intro-activities',
         title: 'その他の活動もある感じ？',
+      },
+    ],
+  },
+  {
+    title: '研究成果',
+    articles: [
+      {
+        articleId: 'research-abstract',
+        title: '概要',
+      },
+      {
+        articleId: 'research-tourism',
+        title: '観光情報学',
+      },
+      {
+        articleId: 'research-archive',
+        title: 'デジタルアーカイブ',
+      },
+      {
+        articleId: 'research-software',
+        title: 'ソフトウェア工学',
+      },
+      {
+        articleId: 'research-other',
+        title: 'その他',
       },
     ],
   },

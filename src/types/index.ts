@@ -1,2 +1,2 @@
 export * from './ArticleAbstract';
-export * from './Chapter';
+export * from './Category';

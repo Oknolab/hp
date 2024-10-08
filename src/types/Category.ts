@@ -1,6 +1,6 @@
 import { ArticleAbstract } from './ArticleAbstract';
 
-export type Chapter = {
+export type Category = {
   title: string;
   articles: ArticleAbstract[];
 };

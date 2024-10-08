@@ -3,7 +3,7 @@ import type { Meta, StoryObj } from '@storybook/react';
 import { _ChapterListFetch } from '.';
 
 const meta = {
-  title: 'ChapterList/ChapterListFetch',
+  title: 'OldChapterList/ChapterListFetch',
   component: _ChapterListFetch,
   tags: ['autodocs'],
 } satisfies Meta<typeof _ChapterListFetch>;
