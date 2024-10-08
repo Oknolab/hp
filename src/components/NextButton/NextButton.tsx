@@ -6,7 +6,7 @@ type NextButtonProps = {
 
 export const NextButton = ({ isShowing = true }: NextButtonProps) => {
   return (
-    <button className="flex h-12 w-20 items-center justify-center">
+    <button className="flex h-12 w-20 items-center justify-center hover:scale-110">
       <Transition
         enter="transition-transform duration-500"
         enterFrom="scale-0"
