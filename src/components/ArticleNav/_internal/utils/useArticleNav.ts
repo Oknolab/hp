@@ -13,11 +13,16 @@ export function useArticleNav(): ArticleNav {
   const activeArticle =
     activeCategory && activeArticlePos !== null ? activeCategory.articles[activeArticlePos] : null;
 
+  function handleClickCategory(categoryPos: number) {
+    setActiveCategoryPos(categoryPos);
+  }
+
   return {
     categories,
     hoveredCategory,
     activeCategory,
     activeArticle,
+    handleClickCategory,
   };
 }
 
@@ -26,4 +31,5 @@ interface ArticleNav {
   hoveredCategory: Category | null;
   activeCategory: Category | null;
   activeArticle: ArticleAbstract | null;
+  handleClickCategory: (categoryPos: number) => void;
 }
