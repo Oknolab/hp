@@ -1,12 +1,27 @@
 import { Transition } from '@headlessui/react';
+import clsx from 'clsx';
+import { Link } from 'react-router-dom';
+
+import { useChapter } from '@/contexts/chapter';
+import { paths } from '@/utils';
 
 type NextButtonProps = {
   isShowing?: boolean;
 };
 
 export const NextButton = ({ isShowing = true }: NextButtonProps) => {
+  const { nextArticle } = useChapter();
+
+  const isActive = nextArticle ? true : false;
+
+  const className = clsx('flex h-12 w-20 items-center justify-center hover:scale-110', {
+    'opacity-10 pointer-events-none scale-100': !isActive,
+  });
+
+  const to = nextArticle ? paths.article(nextArticle.articleId) : '#';
+
   return (
-    <button className="flex h-12 w-20 items-center justify-center hover:scale-110">
+    <Link className={className} to={to}>
       <Transition
         enter="transition-transform duration-500"
         enterFrom="scale-0"
@@ -30,6 +45,6 @@ export const NextButton = ({ isShowing = true }: NextButtonProps) => {
           </svg>
         </div>
       </Transition>
-    </button>
+    </Link>
   );
 };

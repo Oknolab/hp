@@ -1,12 +1,26 @@
 import { Transition } from '@headlessui/react';
+import clsx from 'clsx';
+import { Link } from 'react-router-dom';
+
+import { useChapter } from '@/contexts/chapter';
+import { paths } from '@/utils';
 
 type PreviousButtonProps = {
   isShowing?: boolean;
 };
 
 export const PreviousButton = ({ isShowing = true }: PreviousButtonProps) => {
+  const { prevArticle } = useChapter();
+  const isActive = prevArticle ? true : false;
+
+  const className = clsx('flex h-12 w-20 items-center justify-center', {
+    'opacity-10 pointer-events-none scale-100': !isActive,
+  });
+
+  const to = prevArticle ? paths.article(prevArticle.articleId) : '#';
+
   return (
-    <button className="flex h-12 w-20 items-center justify-center">
+    <Link className={className} to={to}>
       <Transition
         enter="transition-opacity duration-500"
         enterFrom="opacity-0"
@@ -30,6 +44,6 @@ export const PreviousButton = ({ isShowing = true }: PreviousButtonProps) => {
           <span className="mr-2">Prev</span>
         </div>
       </Transition>
-    </button>
+    </Link>
   );
 };
