@@ -1,3 +1,5 @@
+import { Transition } from '@headlessui/react';
+import clsx from 'clsx';
 import { memo, useEffect } from 'react';
 import { Link } from 'react-router-dom';
 
@@ -22,9 +24,12 @@ export const Chapter = ({ chapter }: ChapterProps) => {
     <nav aria-label="目次" className="flex flex-col gap-1 border border-gray-200 p-2">
       <Typography variant="h3">{chapter.title}</Typography>
       <ul className="mx-2 flex flex-col gap-1">
-        {chapter.articles.map((article) => (
-          <MemoizedChapterItem key={article.articleId} article={article} />
-        ))}
+        {chapter.articles.map((article) => {
+          const isActive = currentArticle.articleId === article.articleId;
+          return (
+            <MemoizedChapterItem key={article.articleId} article={article} isActive={isActive} />
+          );
+        })}
       </ul>
     </nav>
   );
@@ -32,14 +37,20 @@ export const Chapter = ({ chapter }: ChapterProps) => {
 
 type ChapterItemProps = {
   article: ArticleAbstract;
+  isActive?: boolean;
 };
-const ChapterItem = ({ article }: ChapterItemProps) => {
+const ChapterItem = ({ article, isActive }: ChapterItemProps) => {
   const path = paths.article(article.articleId);
 
   console.log(`render ChapterItem: ${article.title}`);
 
+  const className = clsx('px-1 transition-colors duration-300', {
+    'bg-blue-200': isActive,
+    'hover:bg-gray-100': !isActive,
+  });
+
   return (
-    <li className="px-1 hover:bg-gray-200">
+    <li className={className}>
       <Link className="block w-full" to={path}>
         <Typography variant="button">{article.title}</Typography>
       </Link>
