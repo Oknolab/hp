@@ -1,8 +1,7 @@
 import { createContext, useContext, useEffect, useState } from 'react';
 import { useLocation } from 'react-router-dom';
 
-// import { chapters } from '../mocks/chapters';
-
+import { categories } from '@/mocks';
 import { ArticleAbstract } from '@/types';
 import { articleIdFromPathname } from '@/utils/articleIdFromPathname';
 
@@ -32,7 +31,7 @@ type ChapterProviderProps = {
 };
 export const ChapterProvider = ({ children }: ChapterProviderProps) => {
   const location = useLocation();
-  const chapter = chapters[0];
+  const chapter = categories[0];
   const articles = chapter.articles;
   const [currentArticlePos, setCurrentArticlePos] = useState(0);
 

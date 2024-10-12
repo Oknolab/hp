@@ -1,6 +1,6 @@
 import { createBrowserRouter, Outlet, RouterProvider as RP } from 'react-router-dom';
 
-import { ChapterProvider } from './chapter';
+// import { ChapterProvider } from './chapter';
 
 import { Abstract, Activities, Boss, Members, SelfSeminar, Seminar } from '@/articles/intro';
 import { PageLayout } from '@/components';
@@ -10,11 +10,11 @@ import { paths } from '@/utils';
 const RootLayout = () => {
   return (
     // TODO: ここにChapterProvider置くのは多分おかしい
-    <ChapterProvider>
-      <PageLayout>
-        <Outlet />
-      </PageLayout>
-    </ChapterProvider>
+    // <ChapterProvider>
+    <PageLayout>
+      <Outlet />
+    </PageLayout>
+    // </ChapterProvider>
   );
 };
 
