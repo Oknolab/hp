@@ -12,7 +12,6 @@ type CategoryTabProps = {
 
 export const CategoryTab = ({ category, isActive }: CategoryTabProps) => {
   const className = clsx('border', { 'bg-blue-200': isActive });
-  console.log(category.articles);
 
   const to = paths.article(category.articles[0].articleId);
 
