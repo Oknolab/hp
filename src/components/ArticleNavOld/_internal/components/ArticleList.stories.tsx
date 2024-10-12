@@ -1,14 +1,14 @@
 import type { Meta, StoryObj } from '@storybook/react';
 
-import { ArticleNav } from '.';
+import { ArticleList } from '.';
 
 import { categories } from '@/mocks';
 
 const meta = {
-  title: 'ArticleNav/ArticleNav',
-  component: ArticleNav,
+  title: 'ArticleNavOld/ArticleList',
+  component: ArticleList,
   tags: ['autodocs'],
-} satisfies Meta<typeof ArticleNav>;
+} satisfies Meta<typeof ArticleList>;
 
 export default meta;
 
@@ -16,6 +16,6 @@ type Story = StoryObj<typeof meta>;
 
 export const Sample: Story = {
   args: {
-    categories,
+    articles: categories[0].articles,
   },
 };

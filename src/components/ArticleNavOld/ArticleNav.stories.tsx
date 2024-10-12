@@ -1,14 +1,14 @@
 import type { Meta, StoryObj } from '@storybook/react';
 
-import { CategoryList } from '.';
+import { ArticleNav } from '.';
 
 import { categories } from '@/mocks';
 
 const meta = {
-  title: 'ArticleNav/CategoryList',
-  component: CategoryList,
+  title: 'ArticleNavOld/ArticleNav',
+  component: ArticleNav,
   tags: ['autodocs'],
-} satisfies Meta<typeof CategoryList>;
+} satisfies Meta<typeof ArticleNav>;
 
 export default meta;
 
