@@ -28,10 +28,12 @@ jobs:
       
       - name: Deploy to server
         run: |
+          echo "Deploying to server..."
+          echo "Creating logs directory... ${{ env.DEPLOY_PATH }}/logs"
           ssh ${{ env.SSH_USER }}@${{ env.SSH_HOST }} "mkdir -p ${{ env.DEPLOY_PATH }}/logs"
 
           ssh ${{ env.SSH_USER }}@${{ env.SSH_HOST }} "echo 'Deploy started at $(date)' >> ${{ env.DEPLOY_PATH }}/logs/deploy.log"
           
-          scp -r ./dist/* ${{ env.SSH_USER }}@${{ env.SSH_HOST }}:${{ env.DEPLOY_PATH }}
+          scp -P ${{ env.SSH_PORT }} -r ./dist/* ${{ env.SSH_USER }}@${{ env.SSH_HOST }}:${{ env.DEPLOY_PATH }}
 
           ssh ${{ env.SSH_USER }}@${{ env.SSH_HOST }} "echo 'Deploy finished at $(date)' >> ${{ env.DEPLOY_PATH }}/logs/deploy.log"
