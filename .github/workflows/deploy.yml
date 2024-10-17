@@ -27,22 +27,22 @@ jobs:
           key: ${{ secrets.SSH_PRIVATE_KEY }}
           name: id_github_action
           config: |
-            Host ${{ env.SSH_HOST }}
-              HostName ${{ env.SSH_HOST }}
-              User ${{ env.SSH_USER }}
-              Port ${{ env.SSH_PORT }}
+            Host ${{ secrets.SSH_HOST }}
+              HostName ${{ secrets.SSH_HOST }}
+              User ${{ secrets.SSH_USER }}
+              Port ${{ secrets.SSH_PORT }}
               IdentityFile ~/.ssh/id_github_action
           known_hosts: |
-            ${{ env.SSH_KNOWN_HOSTS }}
+            ${{ secrets.SSH_KNOWN_HOSTS }}
       
       - name: Deploy to server
         run: |
           echo "Deploying to server..."
           echo "Creating logs directory... ${{ secrets.DEPLOY_PATH }}/logs"
-          ssh ${{ env.SSH_HOST }} "mkdir -p ${{ env.DEPLOY_PATH }}/logs"
+          ssh ${{ secrets.SSH_HOST }} "mkdir -p ${{ secrets.DEPLOY_PATH }}/logs"
 
-          ssh ${{ env.SSH_USER }}@${{ env.SSH_HOST }} "echo 'Deploy started at $(date)' >> ${{ env.DEPLOY_PATH }}/logs/deploy.log"
+          ssh ${{ secrets.SSH_USER }}@${{ secrets.SSH_HOST }} "echo 'Deploy started at $(date)' >> ${{ secrets.DEPLOY_PATH }}/logs/deploy.log"
           
-          scp -r ./dist/* ${{ env.SSH_HOST }}:${{ env.DEPLOY_PATH }}
+          scp -r ./dist/* ${{ secrets.SSH_HOST }}:${{ secrets.DEPLOY_PATH }}
 
-          ssh ${{ env.SSH_HOST }} "echo 'Deploy finished at $(date)' >> ${{ env.DEPLOY_PATH }}/logs/deploy.log"
+          ssh ${{ secrets.SSH_HOST }} "echo 'Deploy finished at $(date)' >> ${{ secrets.DEPLOY_PATH }}/logs/deploy.log"
