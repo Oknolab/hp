@@ -1,8 +1,9 @@
 import { articleAbstracts } from '.';
 
-import { Chapter } from '@/types';
+import { Category } from '@/types';
 
-export const chapters: Chapter[] = Array.from({ length: 3 }, (_, i) => ({
-  title: `Chapter ${i + 1}`,
+export const categories: Category[] = Array.from({ length: 3 }, (_, i) => ({
+  categoryId: i.toString(),
+  title: `Category ${i + 1}`,
   articles: articleAbstracts,
 }));

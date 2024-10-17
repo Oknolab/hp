@@ -1,8 +1,22 @@
 import { createBrowserRouter, Outlet, RouterProvider as RP } from 'react-router-dom';
 
-import { ChapterProvider } from './chapter';
+// import { ChapterProvider } from './chapter';
 
-import { Abstract, Activities, Boss, Members, SelfSeminar, Seminar } from '@/articles/intro';
+import {
+  Abstract as IntroAbstract,
+  Activities,
+  Boss,
+  Members,
+  SelfSeminar,
+  Seminar,
+} from '@/articles/intro';
+import {
+  Archive,
+  Other,
+  Abstract as ResearchAbstract,
+  Software,
+  Tourism,
+} from '@/articles/research';
 import { PageLayout } from '@/components';
 import { NotFound } from '@/pages';
 import { paths } from '@/utils';
@@ -10,11 +24,11 @@ import { paths } from '@/utils';
 const RootLayout = () => {
   return (
     // TODO: ここにChapterProvider置くのは多分おかしい
-    <ChapterProvider>
-      <PageLayout>
-        <Outlet />
-      </PageLayout>
-    </ChapterProvider>
+    // <ChapterProvider>
+    <PageLayout>
+      <Outlet />
+    </PageLayout>
+    // </ChapterProvider>
   );
 };
 
@@ -24,11 +38,12 @@ const router = createBrowserRouter([
     children: [
       {
         path: paths.top,
-        element: <Abstract />,
+        element: <IntroAbstract />,
       },
+
       {
         path: paths.article('intro-abstract'),
-        element: <Abstract />,
+        element: <IntroAbstract />,
       },
       {
         path: paths.article('intro-boss'),
@@ -49,6 +64,27 @@ const router = createBrowserRouter([
       {
         path: paths.article('intro-activities'),
         element: <Activities />,
+      },
+
+      {
+        path: paths.article('research-abstract'),
+        element: <ResearchAbstract />,
+      },
+      {
+        path: paths.article('research-tourism'),
+        element: <Tourism />,
+      },
+      {
+        path: paths.article('research-archive'),
+        element: <Archive />,
+      },
+      {
+        path: paths.article('research-software'),
+        element: <Software />,
+      },
+      {
+        path: paths.article('research-Other'),
+        element: <Other />,
       },
     ],
   },

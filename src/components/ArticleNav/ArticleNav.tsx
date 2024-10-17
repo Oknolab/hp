@@ -1,34 +1,39 @@
-import { useArticleNav, ArticleList, CategoryList } from './_internal';
+import { TabGroup, TabList, TabPanel, TabPanels } from '@headlessui/react';
+
+import { useArticleNav, ArticleLink, CategoryTab } from './_internal';
+
+import { ArticleAbstract } from '@/types';
 
 export const ArticleNav = () => {
-  const {
-    categories,
-    activeCategory,
-    hoveredCategory,
-    handleClickCategory,
-    handleMouseEnterCategory,
-    handleMouseLeaveCategory,
-  } = useArticleNav();
-  const className = 'flex flex-col';
-
-  const displayArticleList = activeCategory !== null;
-  const articles =
-    hoveredCategory !== null
-      ? hoveredCategory.articles
-      : activeCategory !== null
-        ? activeCategory.articles
-        : [];
+  const { categories, currentCategoryPos } = useArticleNav();
 
   return (
-    <nav className={className}>
-      <CategoryList
-        activeCategory={activeCategory}
-        categories={categories}
-        onClickCategory={handleClickCategory}
-        onMouseEnterCategory={handleMouseEnterCategory}
-        onMouseLeaveCategory={handleMouseLeaveCategory}
-      />
-      {displayArticleList && <ArticleList articles={articles} />}
-    </nav>
+    <TabGroup selectedIndex={currentCategoryPos}>
+      <TabList>
+        {categories.map((category, i) => {
+          const isActive = i === currentCategoryPos;
+
+          return <CategoryTab key={category.categoryId} category={category} isActive={isActive} />;
+        })}
+      </TabList>
+      <TabPanels>
+        {categories.map((category) => (
+          <CategoryTabPanel key={category.categoryId} articles={category.articles} />
+        ))}
+      </TabPanels>
+    </TabGroup>
+  );
+};
+
+type CategoryTabPanelProps = {
+  articles: ArticleAbstract[];
+};
+const CategoryTabPanel = ({ articles }: CategoryTabPanelProps) => {
+  return (
+    <TabPanel className="border">
+      {articles.map((article) => (
+        <ArticleLink key={article.title} article={article} />
+      ))}
+    </TabPanel>
   );
 };

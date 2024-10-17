@@ -2,6 +2,7 @@ import { Category } from '@/types';
 
 export const categories: Category[] = [
   {
+    categoryId: 'intro',
     title: '研究室',
     articles: [
       {
@@ -31,6 +32,7 @@ export const categories: Category[] = [
     ],
   },
   {
+    categoryId: 'research',
     title: '研究成果',
     articles: [
       {
