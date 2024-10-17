@@ -2,7 +2,7 @@ import type { Meta, StoryObj } from '@storybook/react';
 
 import { SideBar } from '.';
 
-import { chapters } from '@/demos';
+import { categories } from '@/demos';
 
 const meta = {
   title: 'SideBar',
@@ -16,7 +16,7 @@ type Story = StoryObj<typeof meta>;
 
 export const Sample: Story = {
   args: {
-    chapters,
+    categories,
   },
   parameters: {
     backgrounds: {
