@@ -1,0 +1,29 @@
+name: Deploy to Okunolab Super Server
+
+on:
+  push:
+    branches:
+      - master
+
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Check out the repository
+        uses: actions/checkout@v3
+
+      - name: Setup SSH
+        uses: webfactory/ssh-agent@v0.5.3
+        with:
+          ssh-private-key: ${{ secrets.SSH_PRIVATE_KEY }}
+      
+      - name: Deploy to server
+        run: |
+          ssh $SSH_USER@$SSH_HOST "mkdir -p ${{ env.DEPLOY_PATH }}/logs"
+
+          ssh ${{ env.SSH_USER }}@${{ env.SSH_HOST }} "echo 'Deploy started at $(date)' >> ${{ env.DEPLOY_PATH }}/logs/deploy.log"
+          
+          scp -r ./dist/* ${{ env.SSH_USER }}@${{ env.SSH_HOST }}:${{ env.DEPLOY_PATH }}
+
+          ssh ${{ env.SSH_USER }}@${{ env.SSH_HOST }} "echo 'Deploy finished at $(date)' >> ${{ env.DEPLOY_PATH }}/logs/deploy.log"
