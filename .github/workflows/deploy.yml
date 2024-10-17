@@ -31,6 +31,7 @@ jobs:
               HostName ${{ env.SSH_HOST }}
               User ${{ env.SSH_USER }}
               Port ${{ env.SSH_PORT }}
+              KnownHostsFile /dev/null
               IdentityFile ~/.ssh/id_github_action
       
       - name: Deploy to server
