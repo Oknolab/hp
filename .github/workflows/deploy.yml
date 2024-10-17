@@ -19,7 +19,11 @@ jobs:
           version: 9.7.1
           run: |
             pnpm install
+            echo "Building..."
             pnpm build
+            pwd
+            ls
+            echo "Build finished."
 
       - name: Setup SSH
         uses: shimataro/ssh-key-action@v2
