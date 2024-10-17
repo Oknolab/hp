@@ -12,6 +12,14 @@ jobs:
     steps:
       - name: Check out the repository
         uses: actions/checkout@v3
+        
+      - name: build
+        uses: pnpm/action-setup@v3.0.0
+        with:
+          version: 9.7.1
+          run: |
+            pnpm install
+            pnpm build
 
       - name: Setup SSH
         uses: webfactory/ssh-agent@v0.5.3
