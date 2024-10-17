@@ -22,18 +22,25 @@ jobs:
             pnpm build
 
       - name: Setup SSH
-        uses: webfactory/ssh-agent@v0.5.3
+        uses: shimataro/ssh-key-action@v2
         with:
-          ssh-private-key: ${{ secrets.SSH_PRIVATE_KEY }}
+          key: ${{ secrets.SSH_PRIVATE_KEY }}
+          name: id_github_action
+          config: |
+            Host ${{ env.SSH_HOST }}
+              HostName ${{ env.SSH_HOST }}
+              User ${{ env.SSH_USER }}
+              Port ${{ env.SSH_PORT }}
+              IdentityFile ~/.ssh/id_github_action
       
       - name: Deploy to server
         run: |
           echo "Deploying to server..."
           echo "Creating logs directory... ${{ env.DEPLOY_PATH }}/logs"
-          ssh ${{ env.SSH_USER }}@${{ env.SSH_HOST }} "mkdir -p ${{ env.DEPLOY_PATH }}/logs"
+          ssh ${{ env.SSH_HOST }} "mkdir -p ${{ env.DEPLOY_PATH }}/logs"
 
           ssh ${{ env.SSH_USER }}@${{ env.SSH_HOST }} "echo 'Deploy started at $(date)' >> ${{ env.DEPLOY_PATH }}/logs/deploy.log"
           
-          scp -P ${{ env.SSH_PORT }} -r ./dist/* ${{ env.SSH_USER }}@${{ env.SSH_HOST }}:${{ env.DEPLOY_PATH }}
+          scp -r ./dist/* ${{ env.SSH_HOST }}:${{ env.DEPLOY_PATH }}
 
-          ssh ${{ env.SSH_USER }}@${{ env.SSH_HOST }} "echo 'Deploy finished at $(date)' >> ${{ env.DEPLOY_PATH }}/logs/deploy.log"
+          ssh ${{ env.SSH_HOST }} "echo 'Deploy finished at $(date)' >> ${{ env.DEPLOY_PATH }}/logs/deploy.log"
