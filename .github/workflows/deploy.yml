@@ -3,7 +3,7 @@ name: Deploy to Okunolab Super Server
 on:
   push:
     branches:
-      - master
+      - main
 
 jobs:
   deploy:
