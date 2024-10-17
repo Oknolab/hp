@@ -37,6 +37,8 @@ jobs:
       
       - name: Deploy to server
         run: |
+          pwd
+          ls
           echo "Deploying to server..."
           echo "Creating logs directory... ${{ secrets.DEPLOY_PATH }}/logs"
           ssh okunolab "mkdir -p ${{ secrets.DEPLOY_PATH }}/logs"
