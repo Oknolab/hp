@@ -27,8 +27,8 @@ jobs:
           key: ${{ secrets.SSH_PRIVATE_KEY }}
           name: id_github_action
           config: |
-            Host ${{ secrets.SSH_HOST }}
-              HostName ${{ secrets.SSH_HOST }}
+            Host okunolab
+              HostName okunolab.c.fun.ac.jp
               User ${{ secrets.SSH_USER }}
               Port ${{ secrets.SSH_PORT }}
               IdentityFile ~/.ssh/id_github_action
@@ -39,10 +39,10 @@ jobs:
         run: |
           echo "Deploying to server..."
           echo "Creating logs directory... ${{ secrets.DEPLOY_PATH }}/logs"
-          ssh ${{ secrets.SSH_HOST }} "mkdir -p ${{ secrets.DEPLOY_PATH }}/logs"
+          ssh okunolab "mkdir -p ${{ secrets.DEPLOY_PATH }}/logs"
 
-          ssh ${{ secrets.SSH_USER }}@${{ secrets.SSH_HOST }} "echo 'Deploy started at $(date)' >> ${{ secrets.DEPLOY_PATH }}/logs/deploy.log"
+          ssh okunolab "echo 'Deploy started at $(date)' >> ${{ secrets.DEPLOY_PATH }}/logs/deploy.log"
           
-          scp -r ./dist/* ${{ secrets.SSH_HOST }}:${{ secrets.DEPLOY_PATH }}
+          scp -r ./dist/* okunolab:${{ secrets.DEPLOY_PATH }}
 
-          ssh ${{ secrets.SSH_HOST }} "echo 'Deploy finished at $(date)' >> ${{ secrets.DEPLOY_PATH }}/logs/deploy.log"
+          ssh okunolab "echo 'Deploy finished at $(date)' >> ${{ secrets.DEPLOY_PATH }}/logs/deploy.log"
