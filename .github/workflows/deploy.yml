@@ -38,7 +38,7 @@ jobs:
       - name: Deploy to server
         run: |
           echo "Deploying to server..."
-          echo "Creating logs directory... ${{ env.DEPLOY_PATH }}/logs"
+          echo "Creating logs directory... ${{ secrets.DEPLOY_PATH }}/logs"
           ssh ${{ env.SSH_HOST }} "mkdir -p ${{ env.DEPLOY_PATH }}/logs"
 
           ssh ${{ env.SSH_USER }}@${{ env.SSH_HOST }} "echo 'Deploy started at $(date)' >> ${{ env.DEPLOY_PATH }}/logs/deploy.log"
