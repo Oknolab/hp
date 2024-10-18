@@ -6,3 +6,4 @@ export * from './ArticleLayout';
 export * from './SideBar';
 export * from './PageLayout';
 export * from './LinkButton';
+export * from './Dialog';
