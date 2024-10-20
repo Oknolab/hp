@@ -47,3 +47,14 @@ export const Button: Story = {
     children: message,
   },
 };
+
+export const Animation: Story = {
+  render: () => (
+    <>
+      <Typography variant="h1">{message}</Typography>
+      <Typography variant="h2">{message}</Typography>
+      <Typography variant="h3">{message}</Typography>
+      <Typography variant="body1">{message}</Typography>
+    </>
+  ),
+};
