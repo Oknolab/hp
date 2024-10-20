@@ -13,9 +13,10 @@ export const ResearchDetail = ({ research }: ResearchDetailProps) => {
       <DialogTitle className="text-center">
         <Typography variant="h1">{research.title}</Typography>
       </DialogTitle>
-      <div className="flex flex-col gap-2">
-        <Description>{research.description}</Description>
+      <Description>{research.description}</Description>
+      <div className="flex gap-2">
         <ButtonToSlide slideUrl={research.slideUrl} />
+        <ButtonToSystem systemUrl={research.systemUrl} />
       </div>
       <div className="max-w-96 overflow-scroll">
         <img alt="research image" src={research.imageUrl} />
@@ -28,11 +29,24 @@ type ButtonToSlideProps = {
   slideUrl?: string;
 };
 const ButtonToSlide = ({ slideUrl }: ButtonToSlideProps) => {
-  const className = clsx('inline-block w-32 border p-2 text-center', 'cursor-pointer');
+  const className = clsx('inline-block w-52 border p-2 text-center', 'cursor-pointer');
 
   return (
     <Button as="a" className={className} href={slideUrl} rel="noopener noreferrer" target="_blank">
-      発表スライド
+      発表スライドを見る
+    </Button>
+  );
+};
+
+type ButtonToSystemProps = {
+  systemUrl?: string;
+};
+const ButtonToSystem = ({ systemUrl }: ButtonToSystemProps) => {
+  const className = clsx('inline-block w-52 border p-2 text-center', 'cursor-pointer');
+
+  return (
+    <Button as="a" className={className} href={systemUrl} rel="noopener noreferrer" target="_blank">
+      システムを見る
     </Button>
   );
 };

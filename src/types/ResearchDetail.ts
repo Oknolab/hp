@@ -4,4 +4,5 @@ export type ResearchDetail = {
   description: string;
   imageUrl: string;
   slideUrl?: string;
+  systemUrl?: string;
 };
