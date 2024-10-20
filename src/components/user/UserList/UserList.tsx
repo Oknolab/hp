@@ -1,3 +1,5 @@
+import clsx from 'clsx';
+
 import { UserAbstract } from '../UserAbstract';
 
 import { UserDetail } from '@/types';
@@ -7,8 +9,10 @@ type UserListProps = {
 };
 
 export const UserList = ({ users }: UserListProps) => {
+  const className = clsx('grid gap-8', 'sx: grid-cols-2 md:grid-cols-4');
+
   return (
-    <div className="grid grid-cols-4 gap-8">
+    <div className={className}>
       {users.map((user) => (
         <div key={user.userId} className="col-span-1 flex h-64 overflow-hidden border">
           <UserAbstract user={user} />
