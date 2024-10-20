@@ -7,7 +7,7 @@ type UserAbstractProps = {
   user: User;
 };
 export const UserAbstract = ({ user }: UserAbstractProps) => {
-  const className = clsx('rounded-md border p-4', 'flex flex-col gap-2');
+  const className = clsx('rounded-md border p-4', 'flex flex-col items-center gap-2');
 
   return (
     <div className={className}>

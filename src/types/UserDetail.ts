@@ -3,5 +3,5 @@ export type UserDetail = {
   avatarUrl: string;
   nickName: string;
   description: string;
-  twitterId: string;
+  twitterId?: string;
 };
