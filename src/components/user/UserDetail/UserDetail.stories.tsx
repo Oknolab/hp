@@ -3,7 +3,7 @@ import type { Meta, StoryObj } from '@storybook/react';
 import { UserDetail } from '.';
 
 import { Dialog } from '@/components';
-import { userDetails } from '@/demos';
+import { userDetails } from '@/mocks';
 
 const meta = {
   title: 'user/UserDetail',

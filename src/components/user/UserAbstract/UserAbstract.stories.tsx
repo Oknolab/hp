@@ -2,7 +2,7 @@ import type { Meta, StoryObj } from '@storybook/react';
 
 import { UserAbstract } from '.';
 
-import { userDetails } from '@/demos';
+import { userDetails } from '@/mocks';
 
 const meta = {
   title: 'user/UserAbstract',
