@@ -2,6 +2,8 @@ import { createBrowserRouter, Outlet, RouterProvider as RP } from 'react-router-
 
 // import { ChapterProvider } from './chapter';
 
+import { DialogProvider } from './dialog';
+
 import {
   Abstract as IntroAbstract,
   Activities,
@@ -24,11 +26,11 @@ import { paths } from '@/utils';
 const RootLayout = () => {
   return (
     // TODO: ここにChapterProvider置くのは多分おかしい
-    // <ChapterProvider>
-    <PageLayout>
-      <Outlet />
-    </PageLayout>
-    // </ChapterProvider>
+    <DialogProvider>
+      <PageLayout>
+        <Outlet />
+      </PageLayout>
+    </DialogProvider>
   );
 };
 
