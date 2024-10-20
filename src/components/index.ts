@@ -7,3 +7,4 @@ export * from './SideBar';
 export * from './PageLayout';
 export * from './LinkButton';
 export * from './Dialog';
+export * from './Header';
