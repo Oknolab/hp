@@ -23,9 +23,7 @@ export const UserAbstract = ({ user }: UserAbstractProps) => {
     <button className={className} onClick={onClick}>
       <img alt="user image" className="w-24 rounded-full" src={user.avatarUrl} />
       <Typography variant="h3">{user.nickName}</Typography>
-      <div className="w-full overflow-hidden">
-        <Typography>{user.description}</Typography>
-      </div>
+      <div className="w-full overflow-hidden">{user.description}</div>
     </button>
   );
 };
