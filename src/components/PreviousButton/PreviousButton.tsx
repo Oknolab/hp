@@ -33,7 +33,7 @@ export const PreviousButton = ({ isShowing = true }: PreviousButtonProps) => {
       >
         <div className="flex size-full items-center justify-center border-2 p-1">
           <Typography variant="button">
-            <div className="mr-1 flex items-center">
+            {/* <div className="mr-1 flex items-center">
               <svg
                 className="size-4"
                 fill="none"
@@ -45,7 +45,7 @@ export const PreviousButton = ({ isShowing = true }: PreviousButtonProps) => {
                 <path d="M15 19l-7-7 7-7" strokeLinecap="round" strokeLinejoin="round"></path>
               </svg>
               <span>Prev</span>
-            </div>
+            </div> */}
           </Typography>
         </div>
       </Transition>
