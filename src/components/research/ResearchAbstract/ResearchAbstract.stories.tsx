@@ -2,7 +2,6 @@ import type { Meta, StoryObj } from '@storybook/react';
 
 import { ResearchAbstract } from '.';
 
-import { Dialog } from '@/components';
 import { researchDetails } from '@/mocks';
 
 const meta = {

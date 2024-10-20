@@ -1,6 +1,3 @@
-import { DialogTitle, Description, Button } from '@headlessui/react';
-import clsx from 'clsx';
-
 import { Typography } from '@/components';
 import { ResearchDetail as Research } from '@/types';
 
@@ -9,9 +6,9 @@ type ResearchAbstractProps = {
 };
 export const ResearchAbstract = ({ research }: ResearchAbstractProps) => {
   return (
-    <div className="flex flex-col gap-8">
+    <div className="flex flex-col gap-8 border p-2">
       <Typography variant="h1">{research.title}</Typography>
-      <div className="max-w-96 overflow-scroll">
+      <div className="overflow-scroll">
         <img alt="research image" src={research.imageUrl} />
       </div>
     </div>

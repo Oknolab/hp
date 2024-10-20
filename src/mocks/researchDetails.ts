@@ -1,3 +1,5 @@
+import * as tourism from './researches/tourism';
+
 import { ResearchDetail } from '@/types';
 
 export const researchDetails: ResearchDetail[] = [
@@ -11,3 +13,5 @@ export const researchDetails: ResearchDetail[] = [
     systemUrl: '#',
   },
 ];
+
+export const tourisms: ResearchDetail[] = [...Object.values(tourism)];
