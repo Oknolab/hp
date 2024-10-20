@@ -10,8 +10,8 @@ type ResearchDetailProps = {
 export const ResearchDetail = ({ research }: ResearchDetailProps) => {
   return (
     <div className="flex flex-col gap-8">
-      <DialogTitle className="text-center">
-        <Typography variant="h1">{research.title}</Typography>
+      <DialogTitle>
+        <Typography variant="h3">{research.title}</Typography>
       </DialogTitle>
       <Description>{research.description}</Description>
       <div className="flex gap-2">
