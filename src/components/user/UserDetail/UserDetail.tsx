@@ -1,16 +1,22 @@
 import { DialogTitle, Description } from '@headlessui/react';
+import clsx from 'clsx';
 
+import { Typography } from '@/components/Typography';
 import { UserDetail as User } from '@/types';
 
 type UserDetailProps = {
   user: User;
 };
 export const UserDetail = ({ user }: UserDetailProps) => {
+  const className = clsx('flex flex-col items-center gap-4');
+
   return (
-    <div>
-      <img alt="user image" className="w-24 rounded-full" src={user.avatarUrl} />
-      <div>
-        <DialogTitle className="text-center">{user.nickName}</DialogTitle>
+    <div className={className}>
+      <div className="flex flex-col items-center gap-2">
+        <img alt="user image" className="w-32 rounded-full" src={user.avatarUrl} />
+        <DialogTitle className="flex justify-center">
+          <Typography variant="h3">{user.nickName}</Typography>
+        </DialogTitle>
         <TwitterButton twitterId={user.twitterId} />
       </div>
       <Description>{user.description}</Description>
