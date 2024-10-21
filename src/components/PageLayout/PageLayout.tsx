@@ -8,8 +8,8 @@ export const PageLayout = ({ children }: PageLayoutProps) => {
     <div className="flex size-full justify-center bg-white pt-16">
       <Header />
       {/* TODO: tailwind.configで設定したい */}
-      <div className="flex w-full max-w-[1080px] justify-center gap-4 border p-4">
-        <div className="flex grow flex-col gap-4">
+      <div className="flex size-full max-w-[1080px] justify-center gap-4 border border-red-100 p-4">
+        <div className="flex size-full grow flex-col gap-4">
           <ArticleNav />
           <div>{children}</div>
         </div>
