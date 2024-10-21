@@ -1,14 +1,19 @@
 import clsx from 'clsx';
 import { Link } from 'react-router-dom';
 
+import { Typography } from '@/components';
 import { paths } from '@/utils';
 
 export const Header = () => {
-  const className = clsx('fixed left-0 top-0 z-50 w-full bg-white p-2');
+  const className = clsx('fixed left-0 top-0 z-50 flex w-full justify-between bg-white p-2');
 
   return (
     <header className={className}>
       <Logo />
+      <div>
+        <Typography variant="h3">オープンラボに向けてHP作成中！</Typography>
+        <Typography variant="h3">応援してくださいorz</Typography>
+      </div>
     </header>
   );
 };
