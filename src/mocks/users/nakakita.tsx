@@ -8,8 +8,9 @@ export const nakakita: UserDetail = {
   description: (
     <>
       <Typography>にゃんたまです！</Typography>
+      <Typography>Twitter始めました!</Typography>
       <Typography>将棋やろ！</Typography>
     </>
   ),
-  twitterId: 'kishida230',
+  twitterId: 'r_nyantama',
 };

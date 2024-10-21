@@ -12,4 +12,5 @@ export const komeji: UserDetail = {
       <Typography>観光ルート推薦の研究してるよ^^</Typography>
     </>
   ),
+  twitterId: 'komejikundayo',
 };
