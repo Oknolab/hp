@@ -5,7 +5,8 @@ import { userDetails } from '@/mocks';
 export const Members = () => {
   return (
     <ArticleLayout title="メンバーはどんなひと？">
-      <Typography>All for one, one for all.</Typography>
+      <Typography>みんな優しいです。多分。</Typography>
+      <Typography>のんびりしてる人が多いです。</Typography>
       <UserList users={userDetails} />
     </ArticleLayout>
   );
