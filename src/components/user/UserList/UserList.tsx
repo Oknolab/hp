@@ -14,7 +14,7 @@ export const UserList = ({ users }: UserListProps) => {
   return (
     <div className={className}>
       {users.map((user) => (
-        <div key={user.userId} className="col-span-1 flex h-64 overflow-hidden border">
+        <div key={user.userId} className="col-span-1 flex h-64">
           <UserAbstract user={user} />
         </div>
       ))}

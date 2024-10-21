@@ -14,8 +14,8 @@ export const UserAbstract = ({ user }: UserAbstractProps) => {
   const className = clsx(
     'w-full rounded-md p-3',
     'flex flex-col items-center gap-2',
-    'border-gray-300 bg-white shadow-lg',
-    'cursor-pointer transition-colors duration-200 hover:bg-gray-100 hover:shadow-xl',
+    'bg-white shadow-lg',
+    'cursor-pointer transition-all duration-200 hover:scale-105 hover:bg-gray-100 hover:shadow-xl focus:outline-none',
     'text-left'
   );
 

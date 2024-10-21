@@ -15,7 +15,7 @@ export const ResearchAbstract = ({ research }: ResearchAbstractProps) => {
     'w-full rounded-md p-3',
     'flex flex-col gap-2',
     'border-gray-300 bg-white shadow-lg',
-    'cursor-pointer transition-colors duration-200 hover:bg-gray-100 hover:shadow-xl',
+    'cursor-pointer transition-all duration-200 hover:bg-gray-100 hover:shadow-xl focus:outline-none',
     'text-left'
   );
 
