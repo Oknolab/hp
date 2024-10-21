@@ -9,9 +9,7 @@ export const nakakita: UserDetail = {
     <>
       <Typography>にゃんたまです！</Typography>
       <Typography>将棋やろ！</Typography>
-      <Typography>ね！</Typography>
-      <Typography>将棋やろうよ！</Typography>
     </>
   ),
-  twitterId: 'hoge',
+  twitterId: 'kishida230',
 };

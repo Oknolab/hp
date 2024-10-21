@@ -4,7 +4,7 @@ import { UserDetail } from '@/types';
 export const okuda: UserDetail = {
   userId: 'okuda',
   nickName: '拓真',
-  avatarUrl: '/images/user/default.png',
+  avatarUrl: '/images/user/okuda.jpg',
   description: (
     <>
       <Typography>拓真です！</Typography>
