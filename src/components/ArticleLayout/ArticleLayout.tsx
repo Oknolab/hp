@@ -8,7 +8,7 @@ type ArticleLayoutProps = {
   children: React.ReactNode;
 };
 export const ArticleLayout = ({ title, className, children }: ArticleLayoutProps) => {
-  const _className = clsx('prose rounded-md border p-4', 'shadow-lg', className);
+  const _className = clsx('prose rounded-md border p-4', className);
   return (
     <article className={_className}>
       <Typography variant="h1">{title}</Typography>

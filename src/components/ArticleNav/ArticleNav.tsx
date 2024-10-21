@@ -8,7 +8,7 @@ export const ArticleNav = () => {
   const { categories, currentCategoryPos } = useArticleNav();
   return (
     <TabGroup selectedIndex={currentCategoryPos}>
-      <TabList className="flex max-w-full border border-blue-300">
+      <TabList className="flex max-w-full items-end">
         {categories.map((category, i) => {
           const isActive = i === currentCategoryPos;
 
@@ -29,7 +29,7 @@ type CategoryTabPanelProps = {
 };
 const CategoryTabPanel = ({ articles }: CategoryTabPanelProps) => {
   return (
-    <TabPanel className="scrollbar-hide flex overflow-x-scroll border border-blue-200">
+    <TabPanel className="flex overflow-x-scroll">
       {articles.map((article) => (
         <ArticleLink key={article.title} article={article} />
       ))}

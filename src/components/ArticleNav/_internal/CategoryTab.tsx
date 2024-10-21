@@ -12,10 +12,10 @@ type CategoryTabProps = {
 
 export const CategoryTab = ({ category, isActive }: CategoryTabProps) => {
   const className = clsx(
-    'border shadow-sm',
+    'border shadow-sm focus:outline-none',
     'w-32 px-4 py-2', //シェイプ
-    'hover:bg-yellow-100 focus:outline-none', //ホバー時の背景色
-    { 'bg-yellow-200': isActive }
+    { 'hover:bg-yellow-100': !isActive }, //ホバー時の背景色
+    { 'bg-gray-400 border-gray-100 h-8': !isActive }
   );
 
   const to = paths.article(category.articles[0].articleId);

@@ -16,7 +16,7 @@ export const ArticleLink = ({ article }: ArticleLinkProps) => {
   const isActive = articleIdFromPathname(pathname) === article.articleId;
 
   const className = clsx(
-    'border border-red-100 text-center',
+    'border border-gray-100 text-center',
     'w-32 shrink-0 px-4 py-2', //シェイプ
     'cursor-pointer hover:bg-blue-100', //ホバー時の背景色
     'truncate',
