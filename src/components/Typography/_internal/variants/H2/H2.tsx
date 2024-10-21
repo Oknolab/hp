@@ -20,5 +20,5 @@ export const H2 = ({ children }: TypographyVariantProps) => {
     );
   });
 
-  return <h2 className="text-2xl font-bold">{textanimate}</h2>;
+  return <h2 className="flex flex-wrap text-2xl font-bold">{textanimate}</h2>;
 };
