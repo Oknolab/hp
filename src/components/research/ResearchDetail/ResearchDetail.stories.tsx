@@ -3,7 +3,7 @@ import type { Meta, StoryObj } from '@storybook/react';
 import { ResearchDetail } from '.';
 
 import { Dialog } from '@/components';
-import { researchDetails } from '@/mocks';
+import { tourisms } from '@/mocks';
 
 const meta = {
   title: 'research/ResearchDetail',
@@ -20,7 +20,7 @@ type Story = StoryObj<typeof meta>;
 
 export const Sample: Story = {
   args: {
-    research: researchDetails[0],
+    research: tourisms[0],
   },
   render: (args) => {
     return (

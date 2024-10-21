@@ -2,7 +2,7 @@ import type { Meta, StoryObj } from '@storybook/react';
 
 import { ResearchAbstract } from '.';
 
-import { researchDetails } from '@/mocks';
+import { tourisms } from '@/mocks';
 
 const meta = {
   title: 'research/ResearchAbstract',
@@ -19,6 +19,6 @@ type Story = StoryObj<typeof meta>;
 
 export const Sample: Story = {
   args: {
-    research: researchDetails[0],
+    research: tourisms[0],
   },
 };
