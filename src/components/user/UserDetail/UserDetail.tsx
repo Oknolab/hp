@@ -35,7 +35,7 @@ export const TwitterButton = ({ twitterId }: TwitterButtonProps) => {
 
   return (
     <a
-      className="block w-24 rounded-md border border-gray-300 p-2 text-center"
+      className="block w-24 rounded-md border border-gray-300 bg-twitter p-2 text-center text-white hover:scale-105"
       href={`https://x.com/${twitterId}`}
       rel="noopener noreferrer"
       target="_blank"

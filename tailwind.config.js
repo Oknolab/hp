@@ -5,6 +5,7 @@ export default {
     extend: {
       colors: {
         cream: 'rgba(255, 237, 179, 0.6)',
+        twitter: '#1DA1F2',
       },
     },
   },
