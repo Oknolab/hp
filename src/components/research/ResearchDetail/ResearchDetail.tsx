@@ -29,6 +29,10 @@ type ButtonToSlideProps = {
   slideUrl?: string;
 };
 const ButtonToSlide = ({ slideUrl }: ButtonToSlideProps) => {
+  if (!slideUrl) {
+    return null;
+  }
+
   const className = clsx('inline-block w-52 border p-2 text-center', 'cursor-pointer');
 
   return (
@@ -42,6 +46,10 @@ type ButtonToSystemProps = {
   systemUrl?: string;
 };
 const ButtonToSystem = ({ systemUrl }: ButtonToSystemProps) => {
+  if (!systemUrl) {
+    return null;
+  }
+
   const className = clsx('inline-block w-52 border p-2 text-center', 'cursor-pointer');
 
   return (

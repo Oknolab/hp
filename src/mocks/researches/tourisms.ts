@@ -9,6 +9,5 @@ export const tourisms: ResearchDetail[] = [
     imageUrl: '/images/research/tourism/food_tourism.png',
     slideUrl:
       'https://hope.fun.ac.jp/pluginfile.php/74911/mod_page/content/59/kumagai_slide.pdf?time=1633954217967',
-    systemUrl: 'http://180.43.174.138:8064',
   },
 ];
