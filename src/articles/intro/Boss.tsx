@@ -1,11 +1,19 @@
-import { ArticleLayout, Typography } from '@/components';
+import { ArticleLayout } from '@/components';
 
 export const Boss = () => {
   return (
     <ArticleLayout title="先生はどんな人？">
-      <Typography>どうも！奥野先生です。</Typography>
-      <Typography>この研究室を治めています。</Typography>
-      <Typography>いつか大学ごと治めます。</Typography>
+      <p>
+        <a
+          className="text-blue-400 hover:opacity-50"
+          href="https://www.fun.ac.jp/faculty/okuno-taku"
+          rel="noopener noreferrer"
+          target="_blank"
+        >
+          こちら
+        </a>
+        をご確認ください。
+      </p>
     </ArticleLayout>
   );
 };

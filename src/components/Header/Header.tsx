@@ -11,7 +11,7 @@ export const Header = () => {
     <header className={className}>
       <Logo />
       <div>
-        <Typography variant="h3">オープンラボに向けてHP作成中！</Typography>
+        <Typography variant="h3">面談に向けてHP作成中！</Typography>
         <Typography variant="h3">応援してくださいorz</Typography>
       </div>
     </header>
