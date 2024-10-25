@@ -8,13 +8,13 @@ export const ArticleNav = () => {
   const { categories, currentCategoryPos } = useArticleNav();
   return (
     <TabGroup selectedIndex={currentCategoryPos}>
-      <TabList className="flex max-w-full items-end">
+      {/* <TabList className="flex max-w-full items-end">
         {categories.map((category, i) => {
           const isActive = i === currentCategoryPos;
 
           return <CategoryTab key={category.categoryId} category={category} isActive={isActive} />;
         })}
-      </TabList>
+      </TabList> */}
       <TabPanels>
         {categories.map((category) => (
           <CategoryTabPanel key={category.categoryId} articles={category.articles} />

@@ -31,30 +31,30 @@ export const categories: Category[] = [
       },
     ],
   },
-  {
-    categoryId: 'research',
-    title: '研究成果',
-    articles: [
-      {
-        articleId: 'research-abstract',
-        title: '概要',
-      },
-      {
-        articleId: 'research-tourism',
-        title: '観光情報学',
-      },
-      {
-        articleId: 'research-archive',
-        title: 'デジタルアーカイブ',
-      },
-      {
-        articleId: 'research-software',
-        title: 'ソフトウェア工学',
-      },
-      {
-        articleId: 'research-other',
-        title: 'その他',
-      },
-    ],
-  },
+  // {
+  //   categoryId: 'research',
+  //   title: '研究成果',
+  //   articles: [
+  //     {
+  //       articleId: 'research-abstract',
+  //       title: '概要',
+  //     },
+  //     {
+  //       articleId: 'research-tourism',
+  //       title: '観光情報学',
+  //     },
+  //     {
+  //       articleId: 'research-archive',
+  //       title: 'デジタルアーカイブ',
+  //     },
+  //     {
+  //       articleId: 'research-software',
+  //       title: 'ソフトウェア工学',
+  //     },
+  //     {
+  //       articleId: 'research-other',
+  //       title: 'その他',
+  //     },
+  //   ],
+  // },
 ];

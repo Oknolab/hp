@@ -14,7 +14,7 @@ export const Header = () => {
 };
 
 const Logo = () => {
-  const className = clsx('px-2 text-4xl font-bold text-blue-500');
+  const className = clsx('px-2 text-4xl font-bold text-[#072ff5] ');
 
   return (
     <Link className={className} to={paths.top}>
