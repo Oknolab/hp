@@ -18,7 +18,7 @@ const Logo = () => {
 
   return (
     <Link className={className} to={paths.top}>
-      OkunoLab
+      okunoLab
     </Link>
   );
 };
