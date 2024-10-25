@@ -1,6 +1,6 @@
-import { TabGroup, TabList, TabPanel, TabPanels } from '@headlessui/react';
+import { TabGroup, TabPanel, TabPanels } from '@headlessui/react';
 
-import { useArticleNav, ArticleLink, CategoryTab } from './_internal';
+import { useArticleNav, ArticleLink } from './_internal';
 
 import { ArticleAbstract } from '@/types';
 
