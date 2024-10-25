@@ -20,5 +20,5 @@ export const Body1 = ({ children }: TypographyVariantProps) => {
     );
   });
 
-  return <p>{textanimate}</p>;
+  return <p className="flex flex-wrap ">{textanimate}</p>;
 };
