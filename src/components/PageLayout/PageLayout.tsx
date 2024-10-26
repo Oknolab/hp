@@ -20,7 +20,7 @@ export const PageLayout = ({ children }: PageLayoutProps) => {
             rel="noopener noreferrer"
             target="_blank"
           >
-            Hope
+            HOPE
           </a>
           をご覧ください。
         </div>
