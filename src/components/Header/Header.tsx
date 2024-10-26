@@ -4,7 +4,10 @@ import { Link } from 'react-router-dom';
 import { paths } from '@/utils';
 
 export const Header = () => {
-  const className = clsx('fixed left-0 top-0 z-50 flex w-full justify-between bg-white p-2');
+  const className = clsx(
+    'fixed left-0 top-0 z-50 flex w-full justify-between bg-white p-2',
+    'font-okunolab'
+  );
 
   return (
     <header className={className}>
@@ -18,7 +21,7 @@ const Logo = () => {
 
   return (
     <Link className={className} to={paths.top}>
-      okunoLab
+      <img alt="logo" className="w-32" src="/logo.png" />
     </Link>
   );
 };
