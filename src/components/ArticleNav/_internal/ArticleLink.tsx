@@ -1,5 +1,5 @@
 import clsx from 'clsx';
-import { useLocation } from 'react-router-dom';
+import { Link, useLocation } from 'react-router-dom';
 
 import { Typography } from '@/components';
 import { ArticleAbstract } from '@/types';
@@ -23,8 +23,8 @@ export const ArticleLink = ({ article }: ArticleLinkProps) => {
     { 'bg-blue-100': isActive }
   );
   return (
-    <a className={className} href={url}>
+    <Link className={className} to={url}>
       <Typography variant="button">{article.title}</Typography>
-    </a>
+    </Link>
   );
 };
